@@ -8,7 +8,7 @@
     </div>
 
     <div class="footer-center"> <!-- Keskimmäinen osio, jossa näytetään tekijänoikeustiedot -->
-      © 2026 Kuvapankki
+      <a href="/kuvapankki/tietosuoja.php">© 2026 Kuvapankki</a>
     </div>
 
 
