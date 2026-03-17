@@ -1,0 +1,361 @@
+/* Kaikki elementit */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* HTML ja body täyteen korkeuteen */
+html, body {
+  height: 100%;
+}
+/* Sivun päärakenne */
+body {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #000;
+}
+/* Pidetään header ja footer omalla paikallaan ja annetaan mainille tilaa kasvaa */
+main {
+  flex: 1;
+}
+/* Keskitetään sisältö ja rajoitetaan leveys */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+/* Header */
+header {
+  background: #6fe7ef;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Headerin linkit */
+header a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* Hakukenttä */
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+/* Hakukenttä input */
+.search input {
+  width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+/* Galleria */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+/* Gallerian kuvat */
+.image-box {
+  height: 180px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Hover-efekti gallerian kuville */
+.image-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+/* Footer */
+footer {
+  background: #2ecc71;
+  padding: 20px 40px;
+}
+/* Footerin rakenne, joka jakaa footerin kolmeen osaan: vasen, keskimmäinen ja oikea */
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Vasemmanpuoleinen osio, jossa näytetään yhteystiedot */
+.footer-left {
+  flex: 1;
+}
+/* Yhteystiedot */
+.contact {
+  background: #fff59d;
+  padding: 8px 14px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* Keskimmäinen osio, jossa näytetään tekijänoikeustiedot */
+.footer-center {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Oikeanpuoleinen osio, jossa näytetään sosiaalisen median linkit */
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+/* Sosiaalisen median ikonit */
+.footer-right img {
+  width: 40px;
+  height: 40px;
+}
+/* Hover-efekti sosiaalisen median ikoneille */
+.footer-right img:hover {
+  transform: scale(1.15);
+}
+
+/* Responsiivisuus*/
+/* Pidetään header ja footer omalla paikallaan ja annetaan mainille tilaa kasvaa */
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+/* Hakukenttä */
+  .search input {
+    width: 100%;
+  }
+/* Galleria */
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+/* Footer */
+  .footer-wrapper {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+/* Oikeanpuoleinen osio, jossa näytetään sosiaalisen median linkit */
+  .footer-right {
+    justify-content: center;
+  }
+}
+/* Kuvasivun rakenne */
+.image-view {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* Kuva isompana kuvasivulla */
+.image-view img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+/* Kuvasivun alaosa, jossa kuvaus ja ostopainike */
+.image-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+/* Kuvaus kuvasivulla */
+.image-description {
+  background: #fff59d;
+  padding: 20px;
+  width: 60%;
+  min-height: 80px;
+}
+/* Ostopainike kuvasivulla */
+.image-buy {
+  width: 30%;
+  text-align: right;
+}
+/* Ostopainike kuvasivulla */
+.buy-btn {
+  display: inline-block;
+  background: #e0d86a;
+  padding: 20px 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+/* Hover-efekti ostopainikkeelle */
+.buy-btn:hover {
+  background: #d4cb55;
+}
+
+
+/* Login-sivun rakenne */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+/* Login-box, joka sisältää login-lomakkeen */
+.login-box {
+  background: #63c7cf;
+  width: 600px;
+  padding: 80px 60px;
+  border: 2px solid #000;
+}
+/* Login-lomake */
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* Login-lomakkeen inputit */
+.login-box input {
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  background: #F2F2F2;
+}
+/* Linkki rekisteröitymissivulle login-sivulla */
+.register-link {
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+/* Otsikko login-sivulla */
+.login-btn {
+  background: #F2F2F2;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+/* Hover-efekti login-painikkeelle */
+.login-btn:hover {
+  background: #F2F2F2;
+}
+/* Virheilmoitus login-sivulla */
+.error {
+  color: red;
+  text-align: center;
+}
+
+/*Login-sivun responsiivisuus*/
+.profile-top {
+  display: flex;
+  gap: 40px;
+  margin: 40px 0;
+}
+/* Profiilisivun rakenne */
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #000;
+}
+/* Placeholder profiilikuvalle, jos käyttäjällä ei ole kuvaa */
+.profile-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #e6d86a;
+  border: 3px solid #000;
+}
+/* Profiilitiedot ja lomake profiilisivulla */
+.profile-info textarea {
+  width: 400px;
+  padding: 10px;
+  background: #fff59d;
+  border: none;
+}
+/* Profiilitiedot ja lomake profiilisivulla */
+.profile-info input[type="file"] {
+  margin-top: 10px;
+}
+/* Tallenna-painike profiilisivulla */
+.profile-info button {
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+/* Galleria profiilisivulla, jossa käyttäjä näkee omat lataamansa kuvat */
+.profile-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 30px 0 60px 0;
+}
+/* Gallerian kuvat profiilisivulla */
+.profile-gallery img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+/* Admin-sivun rakenne */
+.admin-box {
+  background: #63c7cf;
+  padding: 40px;
+  margin: 40px 0;
+  border: 2px solid #000;
+}
+/* Admin-sivun rakenne, jossa näytetään käyttäjät ja kuvat erikseen */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+/* Admin-sivun rakenne, jossa näytetään käyttäjät ja kuvat erikseen */
+.admin-user {
+  text-align: center;
+}
+/* Admin-sivun rakenne, jossa näytetään käyttäjät ja kuvat erikseen */
+.admin-user a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+}
+/* Admin-sivun rakenne, jossa näytetään käyttäjät ja kuvat erikseen */
+.admin-image {
+  text-align: center;
+}
+/* Admin-sivun rakenne, jossa näytetään käyttäjät ja kuvat erikseen */
+.admin-image img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+/* Admin-sivun rakenne, jossa näytetään käyttäjät ja kuvat erikseen */
+.admin-image-actions a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+}
+/* Admin-sivun rakenne, jossa näytetään käyttäjät ja kuvat erikseen */
+.admin-add-btn {
+  background: #fff59d;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  display: inline-block;
+}
